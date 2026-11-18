@@ -3,253 +3,190 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اختبار نهاية نصف الفصل الأول - الإدارة والاقتصاد</title>
-<link href="https://googleapis.com" rel="stylesheet">
+<title>اختبار الإدارة والاقتصاد - الثاني عشر</title>
 <style>
-:root{--primary:#115e59;--primary-hover:#0f4c48;--bg-gray:#f8fafc;--border-color:#e2e8f0;--text-dark:#1e293b;--text-muted:#64748b}
-*{box-sizing:border-box;font-family:'Cairo',sans-serif;user-select:none}
-body{background:#f1f5f9;color:var(--text-dark);margin:0;padding:20px;display:flex;justify-content:center}
-.container{width:100%;max-width:880px;background:#fff;padding:30px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,0.06);border:1px solid var(--border-color)}
-.school-name{color:var(--text-muted);font-size:0.95rem;margin-bottom:5px}
-h1{margin:0 0 25px 0;font-size:1.7rem;font-weight:800;color:#0f172a}
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:25px}
-.info-card{background:var(--bg-gray);border:1px solid var(--border-color);border-radius:10px;padding:12px 15px;text-align:center}
-.info-card span{display:block;font-size:0.85rem;color:var(--text-muted)}
-.info-card strong{display:block;font-size:1.05rem;margin-top:4px;color:var(--text-dark)}
-.instructions{margin-bottom:25px;padding-right:20px;line-height:1.9;color:#334155}
-.input-row{display:grid;grid-template-columns:2fr 1fr;gap:15px}
-@media(max-width:600px){.input-row{grid-template-columns:1fr}}
-.input-group label{display:block;font-weight:700;margin-bottom:8px}
-.input-group input,.input-group select{width:100%;padding:13px;border:1px solid #cbd5e1;border-radius:10px;background:#f8fafc;font-size:1rem;user-select:text}
-.btn{background:var(--primary);color:#fff;border:none;padding:12px 24px;font-size:1rem;font-weight:700;border-radius:10px;cursor:pointer;transition:0.2s}
-.btn:hover{background:var(--primary-hover)}
-.btn-outline{background:#fff;color:var(--text-dark);border:1px solid #cbd5e1}
+*{box-sizing:border-box;font-family:Tahoma,Arial,sans-serif}
+body{background:#f1f5f9;color:#1e293b;margin:0;padding:15px;display:flex;justify-content:center}
+.container{width:100%;max-width:850px;background:#fff;padding:25px;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,0.08)}
+h1{font-size:1.5rem;color:#0f172a;margin:5px 0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:20px}
+.card{background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;text-align:center}
+.card span{display:block;font-size:0.85rem;color:#64748b}
+ul{line-height:1.8;padding-right:20px;margin-bottom:20px}
+input,select{width:100%;padding:12px;border:1px solid #cbd5e1;border-radius:8px;margin-top:6px;margin-bottom:15px;font-size:1rem}
+.btn{background:#115e59;color:#fff;border:none;padding:12px 24px;font-size:1rem;font-weight:bold;border-radius:8px;cursor:pointer}
+.btn-out{background:#fff;color:#1e293b;border:1px solid #cbd5e1}
 .btn-flag{background:#f59e0b}
-.start-footer{display:flex;justify-content:flex-end;margin-top:25px}
 .hidden{display:none}
-.exam-header{display:flex;justify-content:space-between;align-items:center;background:var(--bg-gray);padding:15px 20px;border-radius:12px;margin-bottom:20px;border:1px solid var(--border-color)}
-.timer{font-size:1.3rem;font-weight:800;color:#dc2626}
-.diagram-box{background:#f8fafc;border:1px solid #cbd5e1;border-radius:12px;padding:15px;margin-bottom:18px;text-align:center}
-.question-meta{font-size:0.9rem;color:var(--primary);font-weight:700;margin-bottom:6px}
-.question-title{font-size:1.18rem;font-weight:700;margin-bottom:16px;line-height:1.6}
-.option{display:block;padding:14px 18px;border:1px solid var(--border-color);border-radius:10px;margin-bottom:10px;cursor:pointer;transition:0.2s}
-.option:hover{background:#f1f5f9}
-.option.selected{background:#ccfbf1;border-color:var(--primary);font-weight:700}
-.nav-dots{display:flex;flex-wrap:wrap;gap:7px;margin:22px 0}
-.dot{width:34px;height:34px;border-radius:8px;border:1px solid #cbd5e1;display:flex;align-items:center;justify-content:center;cursor:pointer;font-weight:700;font-size:0.9rem}
-.dot.answered{background:#10b981;color:#fff;border-color:#10b981}
-.dot.flagged{background:#f59e0b;color:#fff;border-color:#f59e0b}
-.dot.active{outline:3px solid #0f172a}
-.controls{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.result-card{text-align:center;padding:25px;background:var(--bg-gray);border-radius:12px;margin-bottom:20px;border:1px solid var(--border-color)}
-.sync-status{display:inline-block;padding:6px 14px;border-radius:20px;font-size:0.9rem;font-weight:700;margin-top:8px;background:#e0f2fe;color:#0369a1}
-.review-item{padding:15px;border:1px solid var(--border-color);border-radius:10px;margin-bottom:12px}
-.correct-ans{color:#059669;font-weight:700}
-.wrong-ans{color:#dc2626;font-weight:700}
+.header{display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:12px 15px;border-radius:8px;margin-bottom:15px;border:1px solid #e2e8f0}
+.opt{padding:12px 15px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:8px;cursor:pointer}
+.opt.sel{background:#ccfbf1;border-color:#115e59;font-weight:bold}
+.dots{display:flex;flex-wrap:wrap;gap:6px;margin:18px 0}
+.dot{width:32px;height:32px;border:1px solid #cbd5e1;border-radius:6px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:0.85rem}
+.dot.ans{background:#10b981;color:#fff}
+.dot.flg{background:#f59e0b;color:#fff}
+.dot.act{outline:2px solid #000}
+.rev{padding:12px;border:1px solid #e2e8f0;border-radius:8px;margin-bottom:10px}
 </style>
 </head>
 <body>
 <div class="container">
-<div id="start-screen">
-<div class="school-name">الصف الثاني عشر الريادة والأعمال</div>
+<div id="s1">
+<div style="color:#64748b">الصف الثاني عشر الريادة والأعمال</div>
 <h1>اختبار نهاية نصف الفصل الأول - الإدارة والاقتصاد</h1>
-<div class="info-grid">
-<div class="info-card"><span>المبحث</span><strong>الإدارة والاقتصاد</strong></div>
-<div class="info-card"><span>الصف</span><strong>الثاني عشر الريادة</strong></div>
-<div class="info-card"><span>مجموع العلامات</span><strong id="total-marks-card">50 علامة</strong></div>
-<div class="info-card"><span>معلم المادة</span><strong>سامر الطويل</strong></div>
+<div class="grid">
+<div class="card"><span>المبحث</span><strong>الإدارة والاقتصاد</strong></div>
+<div class="card"><span>الصف</span><strong>الثاني عشر الريادة</strong></div>
+<div class="card"><span>مجموع العلامات</span><strong>50 علامة</strong></div>
+<div class="card"><span>معلم المادة</span><strong>سامر الطويل</strong></div>
 </div>
-<ul class="instructions">
-<li>يتكون الاختبار من <strong id="q-count-text">33</strong> بنداً (تشمل أسئلة الاختيار من متعدد وأسئلة التصنيف).</li>
-<li>زمن الاختبار <strong>40 دقيقة</strong>، ويبدأ العد التنازلي عند الضغط على «ابدأ الامتحان».</li>
-<li>يمكنك التنقل بين الأسئلة وتغيير إجاباتك وتعليم أي سؤال للمراجعة قبل التسليم.</li>
-<li>النسخ واللصق ومفاتيح الاختصار ممنوعة، وتُسجَّل محاولات مغادرة صفحة الامتحان.</li>
-<li>يُسلَّم الامتحان تلقائياً عند انتهاء الوقت، وتُرسل النتيجة للمعلم مع عرض الإجابات الصحيحة.</li>
+<ul>
+<li>يتكون الاختبار من <strong>33 بنداً</strong> (اختيار من متعدد وتصنيف).</li>
+<li>زمن الاختبار <strong>40 دقيقة</strong> ويبدأ العد التنازلي عند البدء.</li>
+<li>يُمنع النسخ ومغادرة الصفحة وتُسجل محاولات الخروج تلقائياً.</li>
 </ul>
-<div class="input-row">
-<div class="input-group">
-<label for="student-name">الاسم الرباعي *</label>
-<input type="text" id="student-name" placeholder="اكتب اسمك الرباعي كاملاً">
-</div>
-<div class="input-group">
-<label for="student-class">الصف *</label>
-<select id="student-class"><option value="الثاني عشر الريادة">الثاني عشر الريادة</option></select>
-</div>
-</div>
-<div class="start-footer"><button class="btn" onclick="startExam()">ابدأ الامتحان</button></div>
+<label><strong>الاسم الرباعي *</strong></label>
+<input type="text" id="sname" placeholder="اكتب اسمك الرباعي كاملاً">
+<label><strong>الصف *</strong></label>
+<select id="sclass"><option value="الثاني عشر الريادة">الثاني عشر الريادة</option></select>
+<button type="button" class="btn" onclick="begin()">ابدأ الامتحان</button>
 </div>
 
-<div id="exam-screen" class="hidden">
-<div class="exam-header">
-<div>الطالب: <strong id="display-name"></strong> | تنبيهات الخروج: <strong id="tab-warnings" style="color:red">0</strong></div>
-<div class="timer" id="timer">40:00</div>
+<div id="s2" class="hidden">
+<div class="header">
+<div>الطالب: <strong id="dname"></strong> | خروج: <strong id="warn" style="color:red">0</strong></div>
+<div style="font-size:1.2rem;font-weight:bold;color:#dc2626" id="tmr">40:00</div>
 </div>
 
-<div id="diagram-container" class="diagram-box hidden">
-<div style="font-weight:700;margin-bottom:10px">تأمل الشكل التالي ثم أجب عن الأسئلة التي تليه:</div>
-<svg width="100%" height="210" viewBox="0 0 560 210" style="max-width:520px;background:#fff;border-radius:8px;border:1px solid #e2e8f0">
-<rect x="380" y="12" width="110" height="36" rx="8" fill="#facc15" stroke="#1e293b" stroke-width="2"/><text x="435" y="35" text-anchor="middle" font-weight="bold" font-size="15">آلة (1)</text><text x="335" y="25" text-anchor="middle" font-weight="bold" font-size="13">15/hr</text><line x1="380" y1="30" x2="300" y2="30" stroke="#1e293b" stroke-width="2"/>
-<rect x="380" y="60" width="110" height="36" rx="8" fill="#facc15" stroke="#1e293b" stroke-width="2"/><text x="435" y="83" text-anchor="middle" font-weight="bold" font-size="15">آلة (2)</text><text x="335" y="73" text-anchor="middle" font-weight="bold" font-size="13">15/hr</text><line x1="380" y1="78" x2="300" y2="78" stroke="#1e293b" stroke-width="2"/>
-<rect x="380" y="108" width="110" height="36" rx="8" fill="#facc15" stroke="#1e293b" stroke-width="2"/><text x="435" y="131" text-anchor="middle" font-weight="bold" font-size="15">آلة (3)</text><text x="335" y="121" text-anchor="middle" font-weight="bold" font-size="13">20/hr</text><line x1="380" y1="126" x2="300" y2="126" stroke="#1e293b" stroke-width="2"/>
-<rect x="380" y="156" width="110" height="36" rx="8" fill="#facc15" stroke="#1e293b" stroke-width="2"/><text x="435" y="179" text-anchor="middle" font-weight="bold" font-size="15">آلة (4)</text><text x="335" y="169" text-anchor="middle" font-weight="bold" font-size="13">15/hr</text><line x1="380" y1="174" x2="300" y2="174" stroke="#1e293b" stroke-width="2"/>
-<path d="M300,30 Q260,30 235,95" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="4"/>
-<path d="M300,78 L235,100" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="4"/>
-<path d="M300,126 L235,110" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="4"/>
-<path d="M300,174 Q260,174 235,115" fill="none" stroke="#1e293b" stroke-width="2" stroke-dasharray="4"/>
-<rect x="115" y="80" width="115" height="50" rx="10" fill="#fde047" stroke="#1e293b" stroke-width="2"/><text x="172" y="110" text-anchor="middle" font-weight="bold" font-size="16">آلة (5)</text>
-<line x1="115" y1="105" x2="40" y2="105" stroke="#1e293b" stroke-width="2"/><text x="75" y="98" text-anchor="middle" font-weight="bold" font-size="14" fill="#dc2626">35/hr</text>
+<div id="diag" class="hidden" style="text-align:center;background:#f8fafc;padding:10px;border-radius:8px;margin-bottom:15px;border:1px solid #cbd5e1">
+<div style="font-weight:bold;margin-bottom:8px">تأمل الشكل التالي ثم أجب:</div>
+<svg width="100%" height="180" viewBox="0 0 520 180" style="max-width:480px;background:#fff">
+<rect x="360" y="10" width="95" height="30" rx="6" fill="#facc15" stroke="#000"/><text x="407" y="30" text-anchor="middle" font-size="13" font-weight="bold">آلة (1)</text><text x="325" y="22" font-size="12">15/hr</text><line x1="360" y1="25" x2="290" y2="25" stroke="#000"/>
+<rect x="360" y="50" width="95" height="30" rx="6" fill="#facc15" stroke="#000"/><text x="407" y="70" text-anchor="middle" font-size="13" font-weight="bold">آلة (2)</text><text x="325" y="62" font-size="12">15/hr</text><line x1="360" y1="65" x2="290" y2="65" stroke="#000"/>
+<rect x="360" y="90" width="95" height="30" rx="6" fill="#facc15" stroke="#000"/><text x="407" y="110" text-anchor="middle" font-size="13" font-weight="bold">آلة (3)</text><text x="325" y="102" font-size="12">20/hr</text><line x1="360" y1="105" x2="290" y2="105" stroke="#000"/>
+<rect x="360" y="130" width="95" height="30" rx="6" fill="#facc15" stroke="#000"/><text x="407" y="150" text-anchor="middle" font-size="13" font-weight="bold">آلة (4)</text><text x="325" y="142" font-size="12">15/hr</text><line x1="360" y1="145" x2="290" y2="145" stroke="#000"/>
+<path d="M290,25 L230,85 M290,65 L230,88 M290,105 L230,92 M290,145 L230,95" stroke="#000" stroke-dasharray="3"/>
+<rect x="120" y="68" width="105" height="44" rx="8" fill="#fde047" stroke="#000"/><text x="172" y="95" text-anchor="middle" font-size="14" font-weight="bold">آلة (5)</text>
+<line x1="120" y1="90" x2="50" y2="90" stroke="#000"/><text x="80" y="83" text-anchor="middle" font-size="13" fill="red" font-weight="bold">35/hr</text>
 </svg>
 </div>
 
-<div class="question-box">
-<div class="question-meta" id="question-meta"></div>
-<div class="question-title" id="question-text"></div>
-<div id="options-container"></div>
-</div>
+<div id="qmeta" style="color:#115e59;font-weight:bold;margin-bottom:5px"></div>
+<div id="qtxt" style="font-size:1.1rem;font-weight:bold;margin-bottom:15px"></div>
+<div id="opts"></div>
+<div class="dots" id="dots"></div>
 
-<div class="nav-dots" id="nav-dots"></div>
-
-<div class="controls">
+<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px">
 <div>
-<button class="btn btn-outline" onclick="prevQuestion()">السابق</button>
-<button class="btn btn-outline" onclick="nextQuestion()">التالي</button>
-<button class="btn btn-flag" onclick="toggleFlag()">تعليم للمراجعة</button>
+<button type="button" class="btn btn-out" onclick="go(cur-1)">السابق</button>
+<button type="button" class="btn btn-out" onclick="go(cur+1)">التالي</button>
+<button type="button" class="btn btn-flag" onclick="flg[cur]=!flg[cur];drawDots()">مراجعة</button>
 </div>
-<button class="btn" style="background:#dc2626" onclick="confirmSubmit()">تسليم الامتحان</button>
+<button type="button" class="btn" style="background:#dc2626" onclick="if(confirm('تسليم الاختبار؟'))finish()">تسليم</button>
 </div>
 </div>
 
-<div id="result-screen" class="hidden">
-<div class="result-card">
+<div id="s3" class="hidden">
+<div style="text-align:center;background:#f8fafc;padding:20px;border-radius:10px;margin-bottom:15px">
 <h2>انتهى الاختبار</h2>
-<p>اسم الطالب: <strong id="res-name"></strong> | الصف: <strong id="res-class"></strong></p>
-<h1 id="res-score" style="color:var(--primary)"></h1>
-<p id="res-warnings"></p>
-<div id="sync-status" class="sync-status">جاري إرسال العلامة إلى سجل المعلم...</div>
+<p>الطالب: <strong id="rname"></strong></p>
+<h1 id="rscore" style="color:#115e59"></h1>
+<p id="rsync" style="color:#0369a1;font-weight:bold"></p>
 </div>
-<h3>مراجعة الإجابات التفصيلية:</h3>
-<div id="review-container"></div>
+<div id="rev"></div>
 </div>
 </div>
 
 <script>
-// ضع رابط Google Apps Script هنا بين علامتي التنصيص
-const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzl3yYdAW_iz-10F1-_SNFc85JDcgLAvVmNnRipHV1FII5Pc4MsxSZAKiAf_FyUdSLP/exec";
+const URL_SHEET = "ضع_الرابط_هنا";
 
-const questions = [
-{q:"1- ما التسلسل المنطقي لخطوات تقييم أداء العاملين؟",options:["وضع المعيار، ملاحظة الأداء، مقارنة الأداء، ثم اتخاذ القرار.","وضع المعيار، مقارنة الأداء، ملاحظة الأداء، ثم اتخاذ القرار.","اتخاذ القرار، مقارنة الأداء، ملاحظة الأداء، ثم وضع المعيار.","ملاحظة الأداء، وضع المعيار، مقارنة الأداء، ثم اتخاذ القرار."],answer:0,points:2},
-{q:"2- ماذا يطلق على تحويل توليفة الموارد الداخلة في العملية الإنتاجية، إلى منتجات تامة الصنع؟",options:["المخرجات.","المدخلات.","التغذية الراجعة.","العمليات."],answer:3,points:2},
+const Q = [
+{q:"1- ما التسلسل المنطقي لخطوات تقييم أداء العاملين؟",o:["وضع المعيار، ملاحظة الأداء، مقارنة الأداء، ثم اتخاذ القرار.","وضع المعيار، مقارنة الأداء، ملاحظة الأداء، ثم اتخاذ القرار.","اتخاذ القرار، مقارنة الأداء، ملاحظة الأداء، ثم وضع المعيار.","ملاحظة الأداء، وضع المعيار، مقارنة الأداء، ثم اتخاذ القرار."],a:0,p:2},
+{q:"2- ماذا يطلق على تحويل توليفة الموارد الداخلة في العملية الإنتاجية، إلى منتجات تامة الصنع؟",o:["المخرجات.","المدخلات.","التغذية الراجعة.","العمليات."],a:3,p:2},
+{q:"3- إذا علمت أن إنتاجية الدينار من الأجور تساوي (3.56) دينار، وأن قيمة إجمالي الأجور (140000) دينار، فكم تبلغ قيمة الإنتاج في النظام الإنتاجي؟",o:["(39325.84) دينار.","(140000) دينار.","(498400) دينار.","(125000) دينار."],a:2,p:2},
+{q:"4- إحدى وظائف إدارة الموارد البشرية تعمل على استثارة همة القوى العاملة في المنشأة لإنجاز العمل المطلوب؟",o:["تقييم الأداء.","تعويض العاملين.","تحليل العمل.","تحفيز العاملين."],a:3,p:2},
+{q:"5- إذا علمت أن متوسط عدد ساعات العمل الشهرية لمصنع ما (200) ساعة للعامل الواحد بدون تأخير وتعطل، وأن حجم الطلب على السلعة يبلغ (24000) كغم شهرياً، والمدة الزمنية لصناعة الكيلو غرام الواحد (10) دقائق فما عدد العاملين المطلوبين لإنتاج الكمية المطلوبة؟",o:["(20) موظف.","(4) موظفين.","(10) موظفين.","(120) موظف."],a:0,p:2},
+{q:"6- ما الذي يمثله الشكل السابق؟",o:["مراحل العملية الإنتاجية.","الاختناق في العملية الإنتاجية (عنق الزجاجة).","توزيع الموارد البشرية.","مراحل تخطيط المشروع."],a:1,p:2,d:1},
+{q:"7- ما الآلة التي تمثل العملية الأكثر حساسية في خط الإنتاج؟",o:["الآلة (1).","الآلة (3).","الآلة (5).","الآلة (4)."],a:2,p:2,d:1},
+{q:"8- ما الطاقة الإنتاجية الفعلية لخط الإنتاج في الساعة؟",o:["15 وحدة.","35 وحدة.","65 وحدة.","70 وحدة."],a:1,p:2,d:1},
+{q:"9- كم يجب أن تكون القدرة الإنتاجية للعملية السابقة، حتى تحقق الإنتاجية المثلى في النظام الإنتاجي؟",o:["متساوية مع مجموع القدرة الإنتاجية للآلات المُغذية لها.","أقل من مجموع القدرة الإنتاجية للآلات المُغذية لها.","أكبر من القدرة الإنتاجية للآلات المُغذية لها.","أقل أو أكبر من القدرة الإنتاجية للآلات المُغذية لها."],a:0,p:2},
+{q:"10- أي الآتية لا تسهم في ظهور إدارة الموارد البشرية؟",o:["ظهور نقابات العمال.","زيادة وعي وثقافة العاملين.","سن قوانين وتشريعات العمل.","استخدام تقنيات جديدة في الترويج."],a:3,p:2},
+{q:"11- تحسب بنسبة محددة من الراتب الأساسي، بناءً على المستوى العام للأسعار؟",o:["علاوة غلاء المعيشة.","العلاوة السنوية.","الراتب العيني.","الراتب الإجمالي."],a:0,p:2},
+{q:"12- الخطوة الرابعة من خطوات عملية اختيار الموظفين في الموارد البشرية؟",o:["تقديم طلب التوظيف.","الاختبار الأولي.","عقد الاختبارات.","إجراء المقابلات."],a:3,p:2},
+{q:"13- ما أثر زيادة المدخلات من الموارد المستخدمة في النظام الإنتاجي، مع انخفاض المخرجات من المنتجات على إنتاجية المنشأة؟",o:["تذبذب الإنتاجية.","انخفاض الإنتاجية.","ثبات الإنتاجية.","زيادة الإنتاجية."],a:1,p:2},
+{q:"14-(أ) مصدر العامل المؤثر في الإنتاجية: «صدور تعليمات من البلدية بتوحيد مواصفات الشقق السكنية»",o:["داخلية","خارجية"],a:1,p:1},
+{q:"14-(ب) مصدر العامل المؤثر في الإنتاجية: «اعتماد نظام الأجر الثابت في العمل»",o:["داخلية","خارجية"],a:0,p:1},
+{q:"14-(ج) مصدر العامل المؤثر في الإنتاجية: «انخفاض جودة مواد البناء المتوفرة في السوق»",o:["داخلية","خارجية"],a:1,p:1},
+{q:"14-(د) مصدر العامل المؤثر في الإنتاجية: «استخدام عمالة جديدة في مجال البناء»",o:["داخلية","خارجية"],a:0,p:1},
+{q:"14-(هـ) مصدر العامل المؤثر في الإنتاجية: «استبدال أنظمة المناولة اليدوية بأخرى آلية»",o:["داخلية","خارجية"],a:0,p:1},
+{q:"15- أي من طرق تقييم الأداء، تعتمد على ظاهرة التوزيع الطبيعي الإحصائي لأداء العاملين؟",o:["التوزيع الإجباري.","الترتيب البسيط.","معايير التقييم.","الإدارة بالأهداف."],a:0,p:2},
+{q:"16-(أ) مصدر الاستقطاب للميزة: «اتساع وعاء المواهب والمهارات المتاحة في المرشحين»",o:["داخلي","خارجي"],a:1,p:1},
 يُرجى استخدام الرمز البرمجي بحذر.
-{q:"3- إذا علمت أن إنتاجية الدينار من الأجور تساوي (3.56) دينار، وأن قيمة إجمالي الأجور (140000) دينار، فكم تبلغ قيمة الإنتاج في النظام الإنتاجي؟",options:["(39325.84) دينار.","(140000) دينار.","(498400) دينار.","(125000) دينار."],answer:2,points:2},
-{q:"4- إحدى وظائف إدارة الموارد البشرية تعمل على استثارة همة القوى العاملة في المنشأة لإنجاز العمل المطلوب؟",options:["تقييم الأداء.","تعويض العاملين.","تحليل العمل.","تحفيز العاملين."],answer:3,points:2},
-{q:"5- إذا علمت أن متوسط عدد ساعات العمل الشهرية لمصنع ما (200) ساعة للعامل الواحد بدون تأخير وتعطل، وأن حجم الطلب على السلعة يبلغ (24000) كغم شهرياً، والمدة الزمنية لصناعة الكيلو غرام الواحد (10) دقائق فما عدد العاملين المطلوبين لإنتاج الكمية المطلوبة؟",options:["(20) موظف.","(4) موظفين.","(10) موظفين.","(120) موظف."],answer:0,points:2},
-{q:"6- ما الذي يمثله الشكل السابق؟",options:["مراحل العملية الإنتاجية.","الاختناق في العملية الإنتاجية (عنق الزجاجة).","توزيع الموارد البشرية.","مراحل تخطيط المشروع."],answer:1,points:2,hasDiagram:true},
-{q:"7- ما الآلة التي تمثل العملية الأكثر حساسية في خط الإنتاج؟",options:["الآلة (1).","الآلة (3).","الآلة (5).","الآلة (4)."],answer:2,points:2,hasDiagram:true},
-{q:"8- ما الطاقة الإنتاجية الفعلية لخط الإنتاج في الساعة؟",options:["15 وحدة.","35 وحدة.","65 وحدة.","70 وحدة."],answer:1,points:2,hasDiagram:true},
-{q:"9- كم يجب أن تكون القدرة الإنتاجية للعملية السابقة، حتى تحقق الإنتاجية المثلى في النظام الإنتاجي؟",options:["متساوية مع مجموع القدرة الإنتاجية للآلات المُغذية لها.","أقل من مجموع القدرة الإنتاجية للآلات المُغذية لها.","أكبر من القدرة الإنتاجية للآلات المُغذية لها.","أقل أو أكبر من القدرة الإنتاجية للآلات المُغذية لها."],answer:0,points:2},
-{q:"10- أي الآتية لا تسهم في ظهور إدارة الموارد البشرية؟",options:["ظهور نقابات العمال.","زيادة وعي وثقافة العاملين.","سن قوانين وتشريعات العمل.","استخدام تقنيات جديدة في الترويج."],answer:3,points:2},
-{q:"11- تحسب بنسبة محددة من الراتب الأساسي، بناءً على المستوى العام للأسعار؟",options:["علاوة غلاء المعيشة.","العلاوة السنوية.","الراتب العيني.","الراتب الإجمالي."],answer:0,points:2},
-{q:"12- الخطوة الرابعة من خطوات عملية اختيار الموظفين في الموارد البشرية؟",options:["تقديم طلب التوظيف.","الاختبار الأولي.","عقد الاختبارات.","إجراء المقابلات."],answer:3,points:2},
-{q:"13- ما أثر زيادة المدخلات من الموارد المستخدمة في النظام الإنتاجي، مع انخفاض المخرجات من المنتجات على إنتاجية المنشأة؟",options:["تذبذب الإنتاجية.","انخفاض الإنتاجية.","ثبات الإنتاجية.","زيادة الإنتاجية."],answer:1,points:2},
-{q:"14- (أ) صنّف العامل المؤثر في الإنتاجية حسب مصدره: «صدور تعليمات من البلدية بتوحيد مواصفات الشقق السكنية»",options:["داخلية","خارجية"],answer:1,points:1},
-{q:"14- (ب) صنّف العامل المؤثر في الإنتاجية حسب مصدره: «اعتماد نظام الأجر الثابت في العمل»",options:["داخلية","خارجية"],answer:0,points:1},
-{q:"14- (ج) صنّف العامل المؤثر في الإنتاجية حسب مصدره: «انخفاض جودة مواد البناء المتوفرة في السوق»",options:["داخلية","خارجية"],answer:1,points:1},
-{q:"14- (د) صنّف العامل المؤثر في الإنتاجية حسب مصدره: «استخدام عمالة جديدة في مجال البناء»",options:["داخلية","خارجية"],answer:0,points:1},
-{q:"14- (هـ) صنّف العامل المؤثر في الإنتاجية حسب مصدره: «استبدال أنظمة المناولة اليدوية بأخرى آلية»",options:["داخلية","خارجية"],answer:0,points:1},
-{q:"15- أي من طرق تقييم الأداء، تعتمد على ظاهرة التوزيع الطبيعي الإحصائي لأداء العاملين؟",options:["التوزيع الإجباري.","الترتيب البسيط.","معايير التقييم.","الإدارة بالأهداف."],answer:0,points:2},
-{q:"16- (أ) حدد مصدر الاستقطاب الذي يختص بالميزة التالية: «اتساع وعاء المواهب والمهارات المتاحة في المرشحين»",options:["داخلي","خارجي"],answer:1,points:1},
-{q:"16- (ب) حدد مصدر الاستقطاب الذي يختص بالميزة التالية: «انخفاض مخاطرة عملية الاختيار»",options:["داخلي","خارجي"],answer:0,points:1},
-{q:"16- (ج) حدد مصدر الاستقطاب الذي يختص بالميزة التالية: «تقليل معدل دوران العمل»",options:["داخلي","خارجي"],answer:0,points:1},
-{q:"16- (د) حدد مصدر الاستقطاب الذي يختص بالميزة التالية: «تعزيز العلاقات التشاركية مع الجميع»",options:["داخلي","خارجي"],answer:0,points:1},
-{q:"16- (هـ) حدد مصدر الاستقطاب الذي يختص بالميزة التالية: «معرفة المرشح برسالة المؤسسة وأنظمتها»",options:["داخلي","خارجي"],answer:0,points:1},
-{q:"16- (و) حدد مصدر الاستقطاب الذي يختص بالميزة التالية: «رفد المنشأة بدماء جديدة للعمل فيها»",options:["داخلي","خارجي"],answer:1,points:1},
-{q:"17- ماذا نعني بالتمكين الوظيفي للموظف الجديد؟",options:["تفويضه السلطات وتدريبه وتحفيزه ومساءلته عن النتائج.","اتخاذ قرار تثبيته أو عدم تثبيته في الوظيفة.","مساءلته عن نتائج أعماله.","تفويضه الصلاحيات اللازمة لممارسته العمل."],answer:0,points:2},
-{q:"18- هي مقدار الطاقة المحجوزة التي تحتفظ بها الشركة لمواجهة الزيادة المفاجئة في الطلب، ولمعالجة هَدْر الوقت في طاقة الإنتاج:",options:["الطاقة المصممة.","صفوف الانتظار.","الطاقة الفعلية.","الطاقة الخامدة (وسادة الطاقة)."],answer:3,points:2},
-{q:"19- أي من الآتية يعتبر تعويض مباشر تقدمه المنشأة للعاملين؟",options:["بدل السكن والمواصلات.","الضمان الاجتماعي.","التأمين الصحي.","توفير وجبات غذائية."],answer:0,points:2},
-{q:"20- (أ) حدد جانب تحليل العمل للعبارة التالية: «اللغات التي يتقنها»",options:["وصف وظيفي","مواصفات وظيفية"],answer:1,points:1},
-{q:"20- (ب) حدد جانب تحليل العمل للعبارة التالية: «ظروف العمل»",options:["وصف وظيفي","مواصفات وظيفية"],answer:0,points:1},
-{q:"20- (ج) حدد جانب تحليل العمل للعبارة التالية: «صلاحيات الوظيفة»",options:["وصف وظيفي","مواصفات وظيفية"],answer:0,points:1},
-{q:"20- (د) حدد جانب تحليل العمل للعبارة التالية: «الاتزان الانفعالي»",options:["وصف وظيفي","مواصفات وظيفية"],answer:1,points:1},
-{q:"20- (هـ) حدد جانب تحليل العمل للعبارة التالية: «الدورات التدريبية»",options:["وصف وظيفي","مواصفات وظيفية"],answer:1,points:1}
+{q:"16-(ب) مصدر الاستقطاب للميزة: «انخفاض مخاطرة عملية الاختيار»",o:["داخلي","خارجي"],a:0,p:1},
+{q:"16-(ج) مصدر الاستقطاب للميزة: «تقليل معدل دوران العمل»",o:["داخلي","خارجي"],a:0,p:1},
+{q:"16-(د) مصدر الاستقطاب للميزة: «تعزيز العلاقات التشاركية مع الجميع»",o:["داخلي","خارجي"],a:0,p:1},
+{q:"16-(هـ) مصدر الاستقطاب للميزة: «معرفة المرشح برسالة المؤسسة وأنظمتها»",o:["داخلي","خارجي"],a:0,p:1},
+{q:"16-(و) مصدر الاستقطاب للميزة: «رفد المنشأة بدماء جديدة للعمل فيها»",o:["داخلي","خارجي"],a:1,p:1},
+{q:"17- ماذا نعني بالتمكين الوظيفي للموظف الجديد؟",o:["تفويضه السلطات وتدريبه وتحفيزه ومساءلته عن النتائج.","اتخاذ قرار تثبيته أو عدم تثبيته في الوظيفة.","مساءلته عن نتائج أعماله.","تفويضه الصلاحيات اللازمة لممارسته العمل."],a:0,p:2},
+{q:"18- هي مقدار الطاقة المحجوزة التي تحتفظ بها الشركة لمواجهة الزيادة المفاجئة في الطلب، ولمعالجة هَدْر الوقت في طاقة الإنتاج:",o:["الطاقة المصممة.","صفوف الانتظار.","الطاقة الفعلية.","الطاقة الخامدة (وسادة الطاقة)."],a:3,p:2},
+{q:"19- أي من الآتية يعتبر تعويض مباشر تقدمه المنشأة للعاملين؟",o:["بدل السكن والمواصلات.","الضمان الاجتماعي.","التأمين الصحي.","توفير وجبات غذائية."],a:0,p:2},
+{q:"20-(أ) جانب تحليل العمل للعبارة: «اللغات التي يتقنها»",o:["وصف وظيفي","مواصفات وظيفية"],a:1,p:1},
+{q:"20-(ب) جانب تحليل العمل للعبارة: «ظروف العمل»",o:["وصف وظيفي","مواصفات وظيفية"],a:0,p:1},
+{q:"20-(ج) جانب تحليل العمل للعبارة: «صلاحيات الوظيفة»",o:["وصف وظيفي","مواصفات وظيفية"],a:0,p:1},
+{q:"20-(د) جانب تحليل العمل للعبارة: «الاتزان الانفعالي»",o:["وصف وظيفي","مواصفات وظيفية"],a:1,p:1},
+{q:"20-(هـ) جانب تحليل العمل للعبارة: «الدورات التدريبية»",o:["وصف وظيفي","مواصفات وظيفية"],a:1,p:1}
 ];
-let currentQ=0,userAnswers=new Array(questions.length).fill(null),flagged=new Array(questions.length).fill(false),timeLeft=40*60,timerInterval,tabWarnings=0,examActive=false;
-const totalPossibleMarks=questions.reduce((s,i)=>s+i.points,0);
-document.getElementById('q-count-text').innerText=questions.length;
-document.getElementById('total-marks-card').innerText=${totalPossibleMarks} علامة;
-document.addEventListener('contextmenu',e=>e.preventDefault());
-document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.key==='F12')e.preventDefault()});
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&examActive){tabWarnings++;document.getElementById('tab-warnings').innerText=tabWarnings;alert("تحذير: تم تسجيل محاولة مغادرة صفحة الامتحان!")}});
-function startExam(){
-const name=document.getElementById('student-name').value.trim();
-if(name.split(' ').length<2){alert("يرجى إدخال الاسم الرباعي قبل البدء.");return}
-document.getElementById('display-name').innerText=name;
-document.getElementById('start-screen').classList.add('hidden');
-document.getElementById('exam-screen').classList.remove('hidden');
-examActive=true;renderDots();loadQuestion(0);startTimer();
+let cur=0,ans=new Array(Q.length).fill(null),flg=new Array(Q.length).fill(false),sec=2400,tm,wrn=0,act=false;
+function begin(){
+let n=document.getElementById('sname').value.trim();
+if(n.length<3){alert('يرجى كتابة الاسم الرباعي');return;}
+document.getElementById('dname').innerText=n;
+document.getElementById('s1').className='hidden';
+document.getElementById('s2').className='';
+act=true;go(0);
+tm=setInterval(()=>{sec--;let m=Math.floor(sec/60),s=sec%60;document.getElementById('tmr').innerText=m+':'+(s<10?'0':'')+s;if(sec<=0)finish();},1000);
 }
-function startTimer(){
-timerInterval=setInterval(()=>{
-timeLeft--;let m=Math.floor(timeLeft/60),s=timeLeft%60;
-document.getElementById('timer').innerText=${m}:${s<10?'0':''}${s};
-if(timeLeft<=0)submitExam();
-},1000);
-}
-function loadQuestion(index){
-currentQ=index;const q=questions[index];
-const diagramDiv=document.getElementById('diagram-container');
-if(q.hasDiagram)diagramDiv.classList.remove('hidden');else diagramDiv.classList.add('hidden');
-document.getElementById('question-meta').innerText=البند ${index+1} من ${questions.length} (${q.points===1?'نقطة واحدة':'نقطتان'});
-document.getElementById('question-text').innerText=q.q;
-const optsDiv=document.getElementById('options-container');optsDiv.innerHTML='';
-q.options.forEach((opt,i)=>{
-const div=document.createElement('div');
-div.className='option'+(userAnswers[index]===i?' selected':'');
-div.innerText=opt;
-div.onclick=()=>{userAnswers[index]=i;loadQuestion(index);renderDots()};
-optsDiv.appendChild(div);
+document.addEventListener('visibilitychange',()=>{if(document.hidden&&act){wrn++;document.getElementById('warn').innerText=wrn;alert('تحذير: تم تسجيل مغادرة الصفحة!');}});
+function go(i){
+if(i<0||i>=Q.length)return;
+cur=i;let item=Q[i];
+document.getElementById('diag').className=item.d?'':'hidden';
+document.getElementById('qmeta').innerText='السؤال '+(i+1)+' من '+Q.length+' ('+(item.p==1?'علامة':'علامتان')+')';
+document.getElementById('qtxt').innerText=item.q;
+let box=document.getElementById('opts');box.innerHTML='';
+item.o.forEach((t,idx)=>{
+let d=document.createElement('div');
+d.className='opt'+(ans[i]===idx?' sel':'');
+d.innerText=t;
+d.onclick=()=>{ans[i]=idx;go(i);};
+box.appendChild(d);
 });
-renderDots();
+drawDots();
 }
-function renderDots(){
-const dotsDiv=document.getElementById('nav-dots');dotsDiv.innerHTML='';
-questions.forEach((_,i)=>{
-const dot=document.createElement('div');dot.className='dot';
-if(i===currentQ)dot.classList.add('active');
-if(flagged[i])dot.classList.add('flagged');else if(userAnswers[i]!==null)dot.classList.add('answered');
-dot.innerText=i+1;dot.onclick=()=>loadQuestion(i);dotsDiv.appendChild(dot);
+function drawDots(){
+let box=document.getElementById('dots');box.innerHTML='';
+Q.forEach((_,i)=>{
+let d=document.createElement('div');
+d.className='dot'+(i===cur?' act':'')+(flg[i]?' flg':(ans[i]!==null?' ans':''));
+d.innerText=i+1;d.onclick=()=>go(i);box.appendChild(d);
 });
 }
-function nextQuestion(){if(currentQ<questions.length-1)loadQuestion(currentQ+1)}
-function prevQuestion(){if(currentQ>0)loadQuestion(currentQ-1)}
-function toggleFlag(){flagged[currentQ]=!flagged[currentQ];renderDots()}
-function confirmSubmit(){if(confirm("هل أنت متأكد من تسليم الاختبار؟"))submitExam()}
-function submitExam(){
-clearInterval(timerInterval);examActive=false;
-document.getElementById('exam-screen').classList.add('hidden');
-document.getElementById('result-screen').classList.remove('hidden');
-let score=0;const reviewDiv=document.getElementById('review-container');reviewDiv.innerHTML='';
-questions.forEach((q,i)=>{
-const isCorrect=userAnswers[i]===q.answer;if(isCorrect)score+=q.points;
-const item=document.createElement('div');item.className='review-item';
-item.innerHTML=<div><strong>${q.q}</strong> <span style="color:#64748b;font-size:0.85rem">(${isCorrect?q.points:0}/${q.points})</span></div><div>إجابتك: <span class="${isCorrect?'correct-ans':'wrong-ans'}">${userAnswers[i]!==null?q.options[userAnswers[i]]:'لم تتم الإجابة'}</span></div>${!isCorrect?الإجابة الصحيحة: ${q.options[q.answer]}:''};
-reviewDiv.appendChild(item);
+function finish(){
+clearInterval(tm);act=false;
+document.getElementById('s2').className='hidden';
+document.getElementById('s3').className='';
+let sc=0,rv=document.getElementById('rev');rv.innerHTML='';
+Q.forEach((item,i)=>{
+let ok=ans[i]===item.a;if(ok)sc+=item.p;
+rv.innerHTML+=''+item.q+'
+إجابتك: '+(ans[i]!==null?item.o[ans[i]]:'بدون إجابة')+''+(ok?'':'
+الصحيحة: '+item.o[item.a]+'')+'';
 });
-const studentName=document.getElementById('student-name').value;
-const studentClass=document.getElementById('student-class').value;
-const finalScoreText=${score} من ${totalPossibleMarks};
-document.getElementById('res-name').innerText=studentName;
-document.getElementById('res-class').innerText=studentClass;
-document.getElementById('res-score').innerText=النتيجة النهائية: ${finalScoreText};
-document.getElementById('res-warnings').innerText=عدد مرات مغادرة الصفحة المسجلة: ${tabWarnings};
-const statusEl=document.getElementById('sync-status');
-if(GOOGLE_SCRIPT_URL&&GOOGLE_SCRIPT_URL.startsWith("http")){
-fetch(GOOGLE_SCRIPT_URL,{method:"POST",mode:"no-cors",headers:{"Content-Type":"application/json"},body:JSON.stringify({name:studentName,studentClass:studentClass,score:finalScoreText,warnings:tabWarnings})})
-.then(()=>{statusEl.style.background="#dcfce7";statusEl.style.color="#166534";statusEl.innerText="✓ تم تسجيل علامتك بنجاح في كشف المعلم."})
-.catch(()=>{statusEl.style.background="#fee2e2";statusEl.style.color="#991b1b";statusEl.innerText="تعذر الإرسال التلقائي، يرجى تصوير الشاشة وإرسالها للمعلم."});
-}else{statusEl.style.display="none"}
+let n=document.getElementById('sname').value,c=document.getElementById('sclass').value,txt=sc+' من 50';
+document.getElementById('rname').innerText=n;
+document.getElementById('rscore').innerText='النتيجة: '+txt;
+if(URL_SHEET.startsWith('http')){
+fetch(URL_SHEET,{method:'POST',mode:'no-cors',body:JSON.stringify({name:n,studentClass:c,score:txt,warnings:wrn})})
+.then(()=>document.getElementById('rsync').innerText='✓ تم إرسال علامتك إلى جدول المعلم');
 }
-
-
-
-تأكد أن ينتهي الكود عندك بـ **`</body></html>`** للتأكد من نسخه بالكامل، ثم ضع رابط Google Apps Script مكان `"ضع_الرابط_هنا"` واحفظ الملف باسم **`index.html`**.
-
+}
